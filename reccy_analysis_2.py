@@ -58,7 +58,7 @@ st.markdown("""
 # -------------------------------------------------------
 @st.cache_data
 def load_data():
-    file_path = r"C:/Users/Client/Desktop/reccy_aggregated_new.xlsx"
+    file_path = r"reccy_aggregated_new.xlsx"
     df = pd.read_excel(file_path)
     df.columns = df.columns.str.strip().str.replace(" ", "_").str.replace("(", "").str.replace(")", "")
     expected = [
@@ -281,5 +281,6 @@ agg_df = df.groupby(group_cols).agg({
 }).reset_index()
 
 st.dataframe(agg_df)
+
 
 
